@@ -1,0 +1,131 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="views/google.html">Google</a></li>
+            <li><a ui-sref="dragDrop">Directive</a></li>
+            <li><a ui-sref="d3Chart">d3Chart</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Gmail</a></li>
+            <li><a href="#">Images</a></li>
+            <li>
+                <a href="#">
+                    <span class="glyphicon glyphicon-th"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Value</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody drop>
+            <tr ng-repeat="person in mockData" ng-click="showDetails(person)" drag id="{{$index}}">
+                <td>{{$index}}</td>
+                <td>{{person.name}}</td>
+                <td>
+                    <button type="submit" class="btn btn-sm btn-primary" ng-click="editPerson(person,$index)">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    <button type="button" class="btn btn-sm btn-danger" ng-click="removePerson(person,$index)">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--DETAILS-->
+<div class="container" ng-show="showPersonDetails">
+    <h2>Details</h2>
+    <div class="panel">
+        <form class="form-group">
+            <label> {{showedPerson.name}}</label>
+            <br/>
+            <label> {{showedPerson.location.country}}</label>
+            <br/>
+            <label> {{showedPerson.location.city}}</label>
+            <br/>
+            <button type="button" class="btn btn-primary" ng-click="hideDetails()">Ok</button>
+        </form>
+    </div>
+
+
+</div>
+
+
+<!--Add-->
+<div class="container" ng-show="showAdd">
+    <h1>New Person</h1>
+    <hr/>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+        <form class="form-inline">
+            <div class="form-goup">
+                <label for="newPersonName">Person Name:</label>
+                <input id="newPersonName" type="text" ng-model="newPerson.name" class="form-control" placeholder="Name of your person..." />
+                <br/>
+                <br/>
+
+                <label>Location details:</label>
+                <br/>
+                <br/>
+                <label for="newPersonDetailsCountry">Country:</label>
+                <input id="newPersonDetailsCountry" type="text" ng-model="newPerson.location.country" class="form-control" placeholder="Name of the country..." />
+                <br/>
+                <br/>
+                <label for="newPersonDetailsCity">City:</label>
+                <input id="newPersonDetailsCity" type="text" ng-model="newPerson.location.city" class="form-control" placeholder="Name of the city..." />
+                <br/>
+                <br/>
+                <button type="submit" class="btn btn-primary" ng-click="addPerson(newPerson)">Save</button>
+                <button class="btn btn-danger" ng-click="">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6"></div>
+</div>
+
+<!--Edit-->
+<div class="container" ng-show="showEdit">
+    <h1>Edit Person</h1>
+    <hr/>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+        <form class="form-inline">
+            <div class="form-goup">
+                <label for="editedPersonName">Person Name:</label>
+                <input id="editedPersonName" type="text" ng-model="editedPerson.name" class="form-control" placeholder="Name of your person..." />
+                <br/>
+                <br/>
+                <label>Location details:</label>
+                <br/>
+                <br/>
+                <label for="editedPersonDetailsCountry">Country:</label>
+                <input id="editedPersonDetailsCountry" type="text" ng-model="editedPerson.location.country" class="form-control" placeholder="Name of the country..." />
+                <br/>
+                <br/>
+                <label for="editedPersonDetailsCity">City:</label>
+                <input id="editedPersonDetailsCity" type="text" ng-model="editedPerson.location.city" class="form-control" placeholder="Name of the city..." />
+                <br/>
+                <br/>
+                <button type="submit" class="btn btn-primary" ng-click="updatePerson()">Save</button>
+                <button class="btn btn-danger" ng-click="cancleEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6"></div>
+</div>
