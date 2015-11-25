@@ -1,0 +1,25 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "description": "",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {
+        "angular": "^1.4.7",
+        "angular-mocks": "^1.4.7",
+        "express": "^4.13.3",
+        "jasmine-core": "^2.3.4",
+        "karma-jasmine": "^0.3.6",
+        "restangular": "^1.5.1",
+        "underscore": "^1.8.3"
+    },
+    "devDependencies": {},
+    "author": "",
+    "license": "ISC",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    }
+
+}
