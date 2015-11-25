@@ -5,27 +5,27 @@ angular.module('appStates', ['ui.router'])
         $stateProvider
             .state('dashboard', {
                 url: '/dashboard',
-                templateUrl: 'dashboard/dashboard.html',
+                templateUrl: 'app/dashboard/dashboard.html',
                 controller: 'dashboardController'
             })
             .state('login', {
                 url: '/login',
-                templateUrl: 'logging/login.html',
+                templateUrl: 'app/logging/login.html',
                 controller: 'loginController'
             })
             .state('google', {
                 url: '/google',
-                templateUrl: 'google/google.html',
+                templateUrl: 'app/google/google.html',
                 controller: 'googleController'
             })
             .state('dragDrop', {
                 url: '/dragDrop',
-                templateUrl: 'dragAndDropDirective/dragDrop.html',
+                templateUrl: 'app/dragAndDropDirective/dragDrop.html',
                 controller: 'dragDropController'
             })
             .state('d3Chart', {
                 url: '/d3Chart',
-                templateUrl: 'd3Chart/d3Chart.html',
+                templateUrl: 'app/d3Chart/d3Chart.html',
                 controller: 'd3ChartController'
             });
     });

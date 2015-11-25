@@ -34,6 +34,7 @@ angular.module('dashboardModule', [])
 
 
             // checking if one's is logged
+
             //            if (!authenticationService.isLogged()) {
             //                $state.go('login');
             //            }

@@ -85,6 +85,6 @@ angular.module('d3ChartModule')
 
 
             },
-            templateUrl: 'd3Chart/d3ChartTemplate.html'
+            templateUrl: 'app/d3Chart/d3ChartTemplate.html'
         };
     })
