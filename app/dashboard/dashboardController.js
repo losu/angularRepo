@@ -4,7 +4,7 @@ angular.module('dashboardModule', [])
     .controller('dashboardController',
         function dashboardController($scope, $state, authenticationService, dashboardService) {
 
-
+            $scope.test = 'test!!';
 
             $scope.mockData = [
                 {
@@ -34,9 +34,9 @@ angular.module('dashboardModule', [])
 
 
             // checking if one's is logged
-//            if (!authenticationService.isLogged()) {
-//                $state.go('login');
-//            }
+            //            if (!authenticationService.isLogged()) {
+            //                $state.go('login');
+            //            }
 
 
             $scope.editedPerson = '';
