@@ -4,7 +4,6 @@ angular.module('dashboardModule', [])
     .controller('dashboardController',
         function dashboardController($scope, $state, authenticationService, dashboardService) {
 
-            $scope.test = 'test!!';
 
             $scope.mockData = [
                 {
@@ -53,13 +52,9 @@ angular.module('dashboardModule', [])
                 $scope.people = data;
             });
             $scope.addPerson = function (newPerson) {
-
-
                 dashboardService.addPerson(newPerson).then(function (data) {
                     $scope.people = data;
                 });
-
-
             }
 
             $scope.removePerson = function (person, $index) {

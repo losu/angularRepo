@@ -24,7 +24,7 @@
 
     </div>
 </nav>
-{{test}}
+
 <div class="container">
     <table class="table table-hover">
         <thead>
@@ -35,7 +35,7 @@
             </tr>
         </thead>
         <tbody drop>
-            <tr ng-repeat="person in mockData" ng-click="showDetails(person)" drag id="{{$index}}">
+            <tr ng-repeat="person in people" ng-click="showDetails(person)" drag id="{{$index}}">
                 <td>{{$index}}</td>
                 <td>{{person.name}}</td>
                 <td>
@@ -56,9 +56,9 @@
         <form class="form-group">
             <label> {{showedPerson.name}}</label>
             <br/>
-            <label> {{showedPerson.location.country}}</label>
+            <label> {{showedPerson.country}}</label>
             <br/>
-            <label> {{showedPerson.location.city}}</label>
+            <label> {{showedPerson.city}}</label>
             <br/>
             <button type="button" class="btn btn-primary" ng-click="hideDetails()">Ok</button>
         </form>
@@ -85,11 +85,11 @@
                 <br/>
                 <br/>
                 <label for="newPersonDetailsCountry">Country:</label>
-                <input id="newPersonDetailsCountry" type="text" ng-model="newPerson.location.country" class="form-control" placeholder="Name of the country..." />
+                <input id="newPersonDetailsCountry" type="text" ng-model="newPerson.country" class="form-control" placeholder="Name of the country..." />
                 <br/>
                 <br/>
                 <label for="newPersonDetailsCity">City:</label>
-                <input id="newPersonDetailsCity" type="text" ng-model="newPerson.location.city" class="form-control" placeholder="Name of the city..." />
+                <input id="newPersonDetailsCity" type="text" ng-model="newPerson.city" class="form-control" placeholder="Name of the city..." />
                 <br/>
                 <br/>
                 <button type="submit" class="btn btn-primary" ng-click="addPerson(newPerson)">Save</button>
@@ -116,11 +116,11 @@
                 <br/>
                 <br/>
                 <label for="editedPersonDetailsCountry">Country:</label>
-                <input id="editedPersonDetailsCountry" type="text" ng-model="editedPerson.location.country" class="form-control" placeholder="Name of the country..." />
+                <input id="editedPersonDetailsCountry" type="text" ng-model="editedPerson.country" class="form-control" placeholder="Name of the country..." />
                 <br/>
                 <br/>
                 <label for="editedPersonDetailsCity">City:</label>
-                <input id="editedPersonDetailsCity" type="text" ng-model="editedPerson.location.city" class="form-control" placeholder="Name of the city..." />
+                <input id="editedPersonDetailsCity" type="text" ng-model="editedPerson.city" class="form-control" placeholder="Name of the city..." />
                 <br/>
                 <br/>
                 <button type="submit" class="btn btn-primary" ng-click="updatePerson()">Save</button>
